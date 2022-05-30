@@ -1,0 +1,9 @@
+//dataflow modelling
+module SR_flipflop(q,qbar,S,R,clk);
+input S,R,clk;
+output q,qbar;
+
+assign q= clk? (S | ((~R) & q)) : q;
+assign qbar=(~q);
+
+endmodule
